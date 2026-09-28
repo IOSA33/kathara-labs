@@ -1,4 +1,4 @@
-# kathara-cisco-linux
+# Kathara-Labs
 
-## Topology
-## Used 3 Cisco and 4 linux routers
+## First Topology of 7 routers
+- Used 3 Cisco and 4 linux routers
