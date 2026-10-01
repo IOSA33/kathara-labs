@@ -1,0 +1,2 @@
+ip addr add 192.168.0.35/24 dev eth0
+systemctl start bind9

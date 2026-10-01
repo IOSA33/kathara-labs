@@ -15,3 +15,6 @@ dnsit.it.	    IN 	A	192.168.0.1
 
 net.		    IN	NS	dnsnet.net.
 dnsnet.net.	    IN	A	192.168.0.2
+
+jyu.            IN      NS      dnsjyu.jyu.
+dnsjyu.jyu.     IN      A       192.168.0.30
