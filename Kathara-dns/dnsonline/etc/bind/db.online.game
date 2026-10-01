@@ -1,0 +1,11 @@
+$TTL 60000
+@   IN  SOA dnsonline.online.game. root.online.game. (
+        2026100101 ; Serial
+        28       ; Refresh
+        14400       ; Retry
+        3600000     ; Expire
+        15 )    ; Minimum TTL
+
+@           IN  NS  dnsonline.online.game.
+dnsonline   IN  A   192.168.0.20
+pc3         IN  A   192.168.0.30
