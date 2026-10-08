@@ -1,0 +1,12 @@
+$TTL   60000
+@        IN SOA  dnsfi.fi.  root.dnsfi.fi. (
+                    2024120401 ; serial
+                    28800 ; refresh
+                    14400 ; retry
+                    3600000 ; expire
+                    0 ; negative cache ttl
+                 )
+@        IN NS   dnsfi.fi.
+dnsfi    IN  A   10.0.7.2
+
+pc2      IN  A   10.0.8.2

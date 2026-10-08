@@ -1,0 +1,12 @@
+$TTL   60000
+@        IN SOA  dnsjyu.jyu.org.  root.dnsjyu.jyu.org. (
+                    2024120401 ; serial
+                    28800 ; refresh
+                    14400 ; retry
+                    3600000 ; expire
+                    0 ; negative cache ttl
+                 )
+@        IN NS   dnsjyu.jyu.org.
+dnsjyu   IN  A   10.0.10.2
+
+pc1      IN  A   10.0.11.2

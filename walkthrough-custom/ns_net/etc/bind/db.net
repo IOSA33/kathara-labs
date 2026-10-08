@@ -1,0 +1,13 @@
+$TTL   60000
+@        IN SOA  dnsnet.net.  root.dnsnet.net. (
+                    2024120401 ; serial
+                    28800 ; refresh
+                    14400 ; retry
+                    3600000 ; expire
+                    0 ; negative cache ttl
+                 )
+@        IN NS   dnsnet.net.
+dnsnet   IN  A   10.0.6.2
+
+jyu      IN  NS  dnsjyu.jyu.net.
+dnsjyu.jyu IN A  10.0.13.2
