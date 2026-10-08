@@ -1,0 +1,67 @@
+About NAT searched internet - used hours: 2-3h
+
+
+Which problems does NAT solve?
+
+Ipv4 addresses are limited, there are only about 4.3 billion. That is why we can't give every device a unique
+public ipv4 address. and that is where NAT comes in. Instead of giving every device a unique IPv4 address, 
+we let many devices share one public IP address. 
+
+For example, we have local ipv4 192.168.0.0/16 which has about 65 thousands addresses.
+And one router that has public ip for the internet and every local device is connected to it.
+
+And when we need to send data, for example to 198.50.100.20:211 the router rewrites the ip in the packet
+and stores in the mapping table, exmaple:
+src 192.168.0.10:50000, dst 198.51.100.20:443. The Router replace the source ip to its own public ip.
+src 203.0.113.5:62000, dst 198.51.100.20:443. So the server responses
+to the routers public ip. The router then looks up the table to find which local device made the request,
+and forwards the packet to that local ip.
+
+That is why some random server on the internet cant send traffic into the local networks on its own.
+It doesn't know which local device to deliver it to anf router has no key pair also.
+
+
+
+Different types of NAT:
+
+Satic NAT (one to one): every local ip is set to its own unique public ip
+
+Dynamic NAT: the router has a pool of public IPs and temporarily assigns 
+a free one to a local device when it goes out. When the pool is exhausted, new devices can't connect.
+
+NAT Overload: Most standart type, one public IP to the many local IP. 
+And distinguished by port numbers.
+
+Symmetric NAT: a NAT behavior where a separate external port is created for each destination.
+Only the host that received the packet can reply, which makes P2P connections difficult.
+
+
+
+Problems that NAT creates.
+
+End to end problem: External destination cant establish direct connection to a device (source ip),
+because of NAT.
+
+Some protocols (FTP active mode, SIP, H.323) that is puts some in payload ip addresses.
+NAT changes only the headers, so these protocols break.
+
+NAT needs the timeout, because when timeout expires it deletes the table entry. For this
+keepalive packets are needed.
+
+Security and logging, because of NAT we cant directly see which device a public ip belongs to, so we need NAT 
+logs to see information about the sender.
+
+NAT needs CPU and memory to keep the translation table.
+
+NAT cant protect against all security risks. Forwarded ports are open, 
+and malware inside the network can establish outgoing connections that NAT 
+will not stop.
+
+
+
+Ipv6 and NAT
+
+Because there is 2^128 we dont need NAT anymore. Every device can have a unique ipv6 address.
+And a firewall ensures that dangerous traffic does not come in.
+NAT64 and DNS64 allow Ipv6 clients to reach ipv4 resources.
+
